@@ -8,7 +8,7 @@ LABEL build_version="Linuxserver.io version:- ${VERSION} Build-date:- ${BUILD_DA
 
 # package version
 ARG ARGTABLE_VER="2.13"
-ARG TZ="Europe/Oslo"
+ARG TZ="America/Chicago"
 ARG XMLTV_VER="0.5.69"
 
 # Environment settings
@@ -19,6 +19,7 @@ COPY patches/ /tmp/patches/
 
 # install build packages
 RUN \
+ apk update &&\
  apk add --no-cache --virtual=build-dependencies \
 	autoconf \
 	automake \
@@ -140,6 +141,15 @@ RUN \
  curl -L http://cpanmin.us | perl - App::cpanminus && \
  cpanm --installdeps /tmp/patches && \
 
+# dependencies for webgrabpp
+apk --no-cache add ca-certificates wget unzip unrar \
+    && update-ca-certificates && \
+
+# packages for zap2xml
+echo "@edge http://nl.alpinelinux.org/alpine/edge/main" >> /etc/apk/repositories && \
+echo "@edgetesting http://nl.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories && \
+apk add --no-cache perl@edge perl-html-parser@edge perl-http-cookies@edge perl-lwp-useragent-determined@edge perl-json@edge perl-json-xs@edgetesting && \
+
 # build dvb-apps
  hg clone http://linuxtv.org/hg/dvb-apps /tmp/dvb-apps && \
  cd /tmp/dvb-apps && \
@@ -210,6 +220,33 @@ RUN \
  make && \
  make install && \
 
+# download and extract WG++
+mkdir wg++ config data && \
+    wget -O /tmp/wg++.rar http://webgrabplus.com/sites/default/files/download/SW/V1.1.1/WebGrabPlusV1.1.1LINUX.rar && \
+    unrar x /tmp/wg++.rar /wg++/ && \
+    rm /tmp/wg++.rar && \
+    mv /wg++/WebGrab+PlusV1.1.1LINUX/* /wg++/ && \
+    mv /wg++/MDB/ /wg++/mdb && \
+    mv /wg++/REX/ /wg++/rex && \
+    rm /wg++/*.ini && \
+    rm -R /wg++/exe && \
+    cp /wg++/wget.exe /wg++/wget.bat /config/ && \
+    cp -R /wg++/mdb /config/ && \
+    cp -R /wg++/rex /config/ && \
+
+# WG++ update
+wget -O /tmp/update.zip http://webgrabplus.com/sites/default/files/download/sw/V1.1.1/upgrade/patchexe_57.zip && \
+    unzip /tmp/update.zip -d /tmp/ && \
+    mv /tmp/WebGrab+Plus.exe /wg++/ && \
+    mv /tmp/xmltv.dll /wg++/ && \
+
+chmod -R +x /wg++/ && \
+
+# Fetch and extract picons
+wget "https://www.picons.eu/downloads/dir-6urwjetn6a2486g9x44oejbzyprtvtin/srp-full.800x450-760x410.light.on.transparent_2017-09-06--20-04-16.symlink.tar.xz" -O /picons/picons.tar.xz && \
+apk add xz-utils &&\
+tar xf /picons/picons.tar.xz
+
 # cleanup
  apk del --purge \
 	build-dependencies && \
@@ -220,9 +257,9 @@ RUN \
 # copy local files
 COPY root/ /
 
-# add picons
-ADD picons.tar.bz2 /picons
+# add WG++ config files
+ADD WebGrab++.config.xml uk-sky.com.ini tv.com.ini tvguide.co.uk.ini /config/
 
 # ports and volumes
 EXPOSE 9981 9982
-VOLUME /config /recordings
+VOLUME /config /recordings /data

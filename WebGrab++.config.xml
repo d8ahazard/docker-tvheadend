@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<settings>
+  
+	<channel update="i" site="uk-sky.com" site_id="5416" xmltv_id="ABP News">ABP News</channel>
+	<channel update="i" site="uk-sky.com" site_id="3107" xmltv_id="Al Jazeera Eng">Al Jazeera Eng</channel>
+	<channel update="i" site="tvguide.co.uk" site_id="636" xmltv_id="BBC Red Button 1">BBC Red Button 1</channel>
+	<channel update="i" site="uk-sky.com" site_id="5229" xmltv_id="Bike">Bike</channel>
+	<channel update="i" site="uk-sky.com" site_id="3260" xmltv_id="Bloomberg">Bloomberg</channel>
+	<channel update="i" site="tvguide.co.uk" site_id="985" xmltv_id="BT Sport Extra 1">BT Sport Extra 1</channel>
+	<channel update="i" site="tvguide.co.uk" site_id="986" xmltv_id="BT Sport Extra 2">BT Sport Extra 2</channel>
+	<channel update="i" site="tvguide.co.uk" site_id="987" xmltv_id="BT Sport Extra 3">BT Sport Extra 3</channel>
+	<channel update="i" site="tvguide.co.uk" site_id="988" xmltv_id="BT Sport Extra 4">BT Sport Extra 4</channel>
+	<channel update="i" site="tvguide.co.uk" site_id="989" xmltv_id="BT Sport Extra 5">BT Sport Extra 5</channel>
+	<channel update="i" site="tvguide.co.uk" site_id="990" xmltv_id="BT Sport Extra 6">BT Sport Extra 6</channel>
+	<channel update="i" site="uk-sky.com" site_id="3352" xmltv_id="CBS Reality">CBS Reality</channel>
+	<channel update="i" site="uk-sky.com" site_id="3602" xmltv_id="CBS Reality+1">CBS Reality+1</channel>
+	<channel update="i" site="tv.com" site_id="69023305" xmltv_id="CBS Sports Network (CBSSN)">CBS Sports Network (CBSSN)</channel>
+	<channel update="i" site="tv.com" site_id="69031469" xmltv_id="CBS Sports Network HDTV (CBSSD)">CBS Sports Network HDTV (CBSSD)</channel>
+	<!-- Listed as USA/CA: Cinemax Thriller -->
+	<channel update="i" site="tv.com" site_id="69031882" xmltv_id="ThrillerMAX HDTV (East) (TMXHD)">ThrillerMAX HDTV (East) (TMXHD)</channel>
+	<channel update="i" site="uk-sky.com" site_id="3611" xmltv_id="CNBC">CNBC</channel>
+	<channel update="i" site="uk-sky.com" site_id="5741" xmltv_id="Create &amp; Craft">Create &amp; Craft</channel>
+    <channel update="i" site="tv.com" site_id="69044026" xmltv_id="CCTV NEWS (NEWS)">CCTV NEWS (NEWS)</channel>
+	<!-- Not the right channel, but the only listing readily avaialble -->
+	<channel update="i" site="uk-sky.com" site_id="2406" xmltv_id="Disc.Science">Disc.Science</channel>
+	<channel update="i" site="tv.com" site_id="69031662" xmltv_id="Disney XD HDTV (East) (DXDHD)">Disney XD HDTV (East) (DXDHD)</channel>
+	<channel update="i" site="tv.com" site_id="69030762" xmltv_id="Encore Westerns (East) (ENCWS)">Encore Westerns (East) (ENCWS)</channel>
+	<channel update="i" site="uk-sky.com" site_id="4604" xmltv_id="Euronews">Euronews</channel>
+	<channel update="i" site="uk-sky.com" site_id="5415" xmltv_id="Forces TV">Forces TV</channel>
+	<channel update="i" site="tv.com" site_id="69047084" xmltv_id="HLN (HLN)">HLN (HLN)</channel>
+	<channel update="i" site="tv.com" site_id="69034030" xmltv_id="HLN HDTV (HLNHD)">HLN HDTV (HLNHD)</channel>
+	<channel update="i" site="uk-sky.com" site_id="3735" xmltv_id="MOTORS TV UK">MOTORS TV UK</channel>
+	<channel update="i" site="uk-sky.com" site_id="2501" xmltv_id="MTV">MTV</channel>
+	<channel update="i" site="uk-sky.com" site_id="4006" xmltv_id="MTV Live HD">MTV Live HD</channel>
+	<channel update="i" site="uk-sky.com" site_id="5907" xmltv_id="QVC">QVC</channel>
+	<channel update="i" site="uk-sky.com" site_id="4210" xmltv_id="Scuzz">Scuzz</channel>
+	<channel update="i" site="uk-sky.com" site_id="5358" xmltv_id="Showcase">Showcase</channel>
+	<channel update="i" site="tv.com" site_id="69027178" xmltv_id="PBS Kids Sprout (SPROUT)">PBS Kids Sprout (SPROUT)</channel>
+	<channel update="i" site="tv.com" site_id="69047025" xmltv_id="Starz (East) (STARZ)">Starz (East) (STARZ)</channel>
+	<channel update="i" site="tvguide.co.uk" site_id="654" xmltv_id="STV HD">STV HD</channel>
+	<channel update="i" site="uk-sky.com" site_id="5605" xmltv_id="TCM">TCM</channel>
+	<channel update="i" site="uk-sky.com" site_id="3811" xmltv_id="TCM HD">TCM HD</channel>
+	<channel update="i" site="tv.com" site_id="69023746" xmltv_id="VH1 (East) (VH1)">VH1 (East) (VH1)</channel>
+	<channel update="i" site="uk-sky.com" site_id="3531" xmltv_id="Vintage TV">Vintage TV</channel>
+  
+  <filename>guide.xml</filename>
+  <logging>on</logging>
+  <mode />
+  <postprocess grab="y" run="y">mdb</postprocess>
+  <retry time-out="5">4</retry>
+  <timespan>13</timespan>
+  <update>f</update>
+  <user-agent>Mozilla/5.0 (Windows NT 6.1; WOW64; rv:29.0) Gecko/20100101 Firefox/29.0</user-agent>
+</settings>

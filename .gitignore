@@ -43,4 +43,7 @@ Temporary Items
 .apdisk
 
 # Picons file
-picons.tar.bz2
+/config/tv.com.cookies.txt
+/config/tvguide.co.uk.cookies.txt
+
+.idea\*
