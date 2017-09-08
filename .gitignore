@@ -46,4 +46,4 @@ Temporary Items
 /config/tv.com.cookies.txt
 /config/tvguide.co.uk.cookies.txt
 
-.idea\*
+*.idea

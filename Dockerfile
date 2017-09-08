@@ -244,15 +244,12 @@ chmod -R +x /wg++/ && \
 
 # Fetch and extract picons
 wget "https://www.picons.eu/downloads/dir-6urwjetn6a2486g9x44oejbzyprtvtin/srp-full.800x450-760x410.light.on.transparent_2017-09-06--20-04-16.symlink.tar.xz" -O /picons/picons.tar.xz && \
-apk add xz-utils &&\
-tar xf /picons/picons.tar.xz
+apk add xz-utils && \
+tar xf /picons/picons.tar.xz && \
 
 # cleanup
- apk del --purge \
-	build-dependencies && \
- rm -rf \
-	/config/.cpanm \
-	/tmp/*
+ apk del --purge build-dependencies && \
+ rm -rf /config/.cpanm /tmp/*
 
 # copy local files
 COPY root/ /
